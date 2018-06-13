@@ -15,6 +15,7 @@ android {
 
 
         buildConfigField "String", "NEWS_URL", "\"https://newsapi.org/v2/\""
+        buildConfigField "String", "NEWS_API", "\"a4ea1bef7b4b4de3a4a78624ed850512\""
     }
     buildTypes {
         release {
@@ -65,6 +66,7 @@ dependencies {
     // Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
 
     // okhttp
     implementation 'com.squareup.okhttp3:okhttp:3.10.0'
