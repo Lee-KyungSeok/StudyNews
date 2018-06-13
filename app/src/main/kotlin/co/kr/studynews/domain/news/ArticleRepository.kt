@@ -5,7 +5,8 @@ import co.kr.studynews.entity.news.Article
 import io.reactivex.Flowable
 
 interface ArticleRepository {
-    fun getCategoryArticles(country: String, category: String, page : Int) : Flowable<Article>
-    fun getHeadlines(country: String) : Flowable<Article>
-    fun searchKeywords(keywords: String, country: String, category: String) : Flowable<Article>
+    fun getCategoryArticles(country: String, category: String, page : Int) : Flowable<List<Article>>
+    fun getHeadlines(country: String) : Flowable<List<Article>>
+    fun searchKeywords(keywords: String, country: String, category: String) : Flowable<List<Article>>
+    fun getArticle(id : Int) : Flowable<Article>
 }
