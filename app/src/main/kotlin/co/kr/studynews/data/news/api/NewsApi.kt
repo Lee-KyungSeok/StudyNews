@@ -1,5 +1,6 @@
 package co.kr.studynews.data.news.api
 
+import co.kr.studynews.data.news.model.Response
 import io.reactivex.Flowable
 import retrofit2.http.GET
 import retrofit2.http.Query

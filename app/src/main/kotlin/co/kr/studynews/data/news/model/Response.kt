@@ -1,4 +1,4 @@
-package co.kr.studynews.data.news.api
+package co.kr.studynews.data.news.model
 
 data class Response (
         var status : String,

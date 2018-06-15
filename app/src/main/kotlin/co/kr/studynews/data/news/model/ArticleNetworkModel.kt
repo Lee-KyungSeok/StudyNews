@@ -1,4 +1,4 @@
-package co.kr.studynews.data.news.api
+package co.kr.studynews.data.news.model
 
 data class ArticleNetworkModel (
         var publishedAt : String,

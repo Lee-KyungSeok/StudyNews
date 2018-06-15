@@ -1,7 +1,7 @@
-package co.kr.studynews.data.news
+package co.kr.studynews.data.news.mapper
 
 import co.kr.studynews.data.BaseEntityMapper
-import co.kr.studynews.data.news.api.ArticleNetworkModel
+import co.kr.studynews.data.news.model.ArticleNetworkModel
 import co.kr.studynews.entity.news.Article
 
 object ArticleEntityMapper : BaseEntityMapper<ArticleNetworkModel, Article> {
