@@ -8,16 +8,16 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import io.reactivex.subscribers.DisposableSubscriber
 
-abstract class UseCase<T, Params>(
+abstract class UseCase<Type, Params>(
         val threadExecutor: ThreadExecutor,
         val postExecutionThread: PostExecutionThread,
         val disposables : CompositeDisposable = CompositeDisposable()
 ) {
 
-    abstract fun buildUseCaseFlowable(params: Params) : Flowable<T>
+    abstract fun buildUseCaseFlowable(params: Params) : Flowable<Type>
 
-    fun execute(subscriber : DisposableSubscriber<T>, params: Params) {
-        val flowable : Flowable<T> = this.buildUseCaseFlowable(params)
+    fun execute(subscriber : DisposableSubscriber<Type>, params: Params) {
+        val flowable : Flowable<Type> = this.buildUseCaseFlowable(params)
                 .subscribeOn(Schedulers.from(threadExecutor))
                 .observeOn(postExecutionThread.getSceduler())
         addDisposable(flowable.subscribeWith(subscriber))

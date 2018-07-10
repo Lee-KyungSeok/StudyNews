@@ -6,19 +6,17 @@ import co.kr.studynews.data.news.mapper.ArticleEntityMapper
 import co.kr.studynews.entity.news.Article
 import io.reactivex.Flowable
 
-class ArticleNetworkDataSource : ArticleDataSource {
-
-    val api = provideNewsApi()
+class ArticleNetworkDataSource(val articleEntityMapper: ArticleEntityMapper) : ArticleDataSource {
 
     override fun categoryArticles(country: String, category: String, page: Int): Flowable<List<Article>> {
-        return api.getCategoryHeadline(country, category, BuildConfig.NEWS_API).map {
-            it.articles.map { ArticleEntityMapper.toEntity(it) }
+        return provideNewsApi().getCategoryHeadline(country, category, BuildConfig.NEWS_API).map {
+            it.articles.map { articleEntityMapper.toEntity(it) }
         }
     }
 
     override fun headlines(country: String): Flowable<List<Article>> {
-        return api.getHeadline(country, BuildConfig.NEWS_API).map {
-            it.articles.map { ArticleEntityMapper.toEntity(it) }
+        return provideNewsApi().getHeadline(country, BuildConfig.NEWS_API).map {
+            it.articles.map { articleEntityMapper.toEntity(it) }
         }
     }
 
