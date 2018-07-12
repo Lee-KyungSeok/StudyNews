@@ -6,14 +6,11 @@ import co.kr.studynews.domain.executer.ThreadExecutor
 import co.kr.studynews.entity.news.Article
 import io.reactivex.Flowable
 
-class GetArticleDetails constructor(val repository: ArticleRepository,
+class GetRecentArticles constructor(val repository: ArticleRepository,
                         threadExecutor: ThreadExecutor,
                         postExecutionThread: PostExecutionThread
-) : UseCase<Article, GetArticleDetails.Params>(threadExecutor, postExecutionThread) {
-
-    override fun buildUseCaseFlowable(params: Params): Flowable<Article> {
-        return repository.getArticleDetail(params.article)
+) : UseCase<List<Article>, UseCase.None>(threadExecutor, postExecutionThread) {
+    override fun buildUseCaseFlowable(params: None): Flowable<List<Article>> {
+        return repository.getRecentArticle()
     }
-
-    data class Params(val article: Article)
 }

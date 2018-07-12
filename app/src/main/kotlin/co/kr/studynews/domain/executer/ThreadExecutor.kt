@@ -7,4 +7,4 @@ import java.util.concurrent.Executor
  * execution, but every implementation will execute the
  * [UseCase] out of the UI thread.
  */
-interface ThreadExcuter : Executor
+interface ThreadExecutor : Executor

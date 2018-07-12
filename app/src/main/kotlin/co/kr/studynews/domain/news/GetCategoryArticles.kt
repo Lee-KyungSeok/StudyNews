@@ -7,7 +7,7 @@ import co.kr.studynews.entity.news.Article
 import io.reactivex.Flowable
 
 
-class GetCategoryArticles(val repository : ArticleRepository,
+class GetCategoryArticles constructor(val repository : ArticleRepository,
                           threadExecutor: ThreadExecutor,
                           postExecutionThread: PostExecutionThread
 ) : UseCase<List<Article>, GetCategoryArticles.Params>(threadExecutor, postExecutionThread) {

@@ -8,5 +8,6 @@ interface ArticleRepository {
     fun getCategoryArticles(country: String, category: String, page : Int) : Flowable<List<Article>>
     fun getHeadlines(country: String) : Flowable<List<Article>>
     fun searchKeywords(keywords: String, country: String, category: String) : Flowable<List<Article>>
-    fun getArticle(id : Int) : Flowable<Article>
+    fun getArticleDetail(article: Article) : Flowable<Article>
+    fun getRecentArticle() : Flowable<List<Article>>
 }

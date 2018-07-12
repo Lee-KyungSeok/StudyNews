@@ -1,7 +1,7 @@
 package co.kr.studynews.entity.news
 
 class Article (
-        var id: Int,
+        var id: Int?,
         var source_id: Int?,
         var source_name: String?,
         var publishedAt : String,

@@ -1,4 +1,4 @@
-package co.kr.studynews.data.news.model
+package co.kr.studynews.data.remote.model
 
 data class Source(
         var id : String?,

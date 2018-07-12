@@ -1,4 +1,4 @@
-package co.kr.studynews.data.common
+package co.kr.studynews.data.base
 
 
 interface BaseEntityMapper<DataModel, Entity> {

@@ -6,7 +6,7 @@ import co.kr.studynews.domain.executer.ThreadExecutor
 import co.kr.studynews.entity.news.Article
 import io.reactivex.Flowable
 
-class GetHeadlines(val repository : ArticleRepository,
+class GetHeadlines constructor(val repository : ArticleRepository,
                    threadExecutor: ThreadExecutor,
                    postExecutionThread: PostExecutionThread
 ) : UseCase<List<Article>, GetHeadlines.Params>(threadExecutor, postExecutionThread) {

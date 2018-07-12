@@ -1,7 +1,7 @@
 package co.kr.studynews.di
 
 import co.kr.studynews.BuildConfig
-import co.kr.studynews.data.news.api.NewsApi
+import co.kr.studynews.data.remote.api.NewsApi
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
